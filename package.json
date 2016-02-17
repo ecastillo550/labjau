@@ -1,0 +1,24 @@
+{
+  "name": "labjau",
+  "version": "1.0.0",
+  "description": "Laboratorio 1 - Stage 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecastillo550/labjau.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecastillo550/labjau/issues"
+  },
+  "homepage": "https://github.com/ecastillo550/labjau#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-materialize": "^0.1.2",
+    "angular-route": "^1.5.0"
+  }
+}
