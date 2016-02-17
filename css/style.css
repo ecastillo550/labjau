@@ -1,0 +1,18 @@
+/* Fonts */
+.t01{
+	font-family: 'Montserrat', sans-serif;
+}
+.t02{
+	font-family: 'Questrial', sans-serif;	
+}
+
+body {
+  margin: 0;
+  background: #000; 
+}
+
+.landing-page{
+  background-image: url('.\\imgs\\bwater.gif');
+  background-repeat: no-repeat;
+
+}

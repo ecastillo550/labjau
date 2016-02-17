@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+          
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Questrial' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script type="text/javascript" src="app/app.js"></script>
+    <title>Laboratorio 1 - Index</title>
+
+  </head>
+  <body>
+    <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+  <div class="container landing-page" ng-app="myApp" ng-controller="AppCtrl">
+  	<div class="row">
+  		<div class="card-panel hoverable">
+  			<div class="row">
+      			<div class="col s3" >
+      				<img class="responsive-img z-depth-2" src="imgs/mashiro_profile.jpg" ng-model="user_img" />
+  				</div>
+  				<div class="col s6">
+            <div class="row">
+  					   <h2 class="t01" ng-model="dog_name">Mashiro Inu</h2>
+  					   <h4 class="t02" ng-model="user_city">Monterrey, México</h4>
+               
+            <div class="row">
+              
+              <div class="col s2">
+              <a class="waves-effect waves-teal btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a female dogge."><i class="fa fa-venus fa-3x"></i></a>
+              </div>
+              <div class="col s2">
+              <a class="waves-effect waves-teal btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Give me a thumps up!"><i class="fa fa-thumbs-o-up fa-3x"></i></a>
+              </div>
+              <div class="col s2">
+              <a class="waves-effect waves-teal btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Write something on my profile!"><i class="fa fa-pencil-square-o fa-3x"></i></a>
+              </div>
+              <div class="col s2">
+              <a class="waves-effect waves-teal btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Add me as a friend!"><i class="fa fa-user-plus fa-3x"></i></a>
+              </div>
+            </div>
+            </div>
+  				</div>
+          <div class="col s3">
+            <div class="row">
+              <h5 class="t01" ng-model="user_name">
+                Roberto Jauregui
+              </h3>
+            </div>
+            <div class="col s3">
+              <img class="responsive-img z-depth-2" src="imgs/owner_img.jpg" ng-model="owner_img">
+            </div>
+          </div>
+          <div class="col s3" >
+            <div class="fixed-action-btn" >
+                <a class="btn-floating btn-large red">
+                  <i class="large material-icons">mode_edit</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating tooltipped red" data-position="left" data-relay="50" data-tooltip="Change background image"><i class="material-icons">insert_chart</i></a></li>
+                  <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-relay="50" data-tooltip="Change profile picture"><i class="material-icons">format_quote</i></a></li>
+                  <li><a class="btn-floating green tooltipped" data-position="left" data-relay="50" data-tooltip="Change profile details"><i class="material-icons">publish</i></a></li>
+                </ul>
+              </div>
+          </div>
+  			</div>
+        <!-- Text area para las publicaciones -->
+        <div class="row">
+          <div class="col s3">
+            <div class="row">
+            <h5> Notifications </h3>
+            </div>
+          </div>
+          <div class="col s6">
+          <div class="row">
+              <h5> My feed: </h5>
+          </div>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                    <label for="textarea1">Publish something on my profile.</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            </div>
+            <div class="row" >
+              <div class="col s3" ng-controller="ListCtrl">
+              <md-toolbar class="md-theme-light">
+                <h2 class="md-toolbar-tools">
+                  <span>Inbox</span>
+                </h2>
+              </md-toolbar>
+              <md-content>
+                <md-list>
+                    <md-subheader class="md-no-sticky">Check whom has messaged you!</md-subheader>
+                    <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
+                      <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+                      <p>{{ person.name }}</p>
+                      <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+                    </md-list-item>
+                  </md-list>
+              </md-content>
+            </div>
+          </div>
+          </div>
+        </div>
+  		</div>
+    	
+    </div>
+  </div>
+
+            
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
+    <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  </body>
+</html>
